@@ -1,0 +1,35 @@
+### Get Campuses
+
+GET http://localhost:8080/campuses
+
+### add Book to Campus
+
+POST http://localhost:8080/campuses/1/addBook
+Content-Type: application/json
+
+{
+    "title": "Java Complete 11th Edition ",
+    "description": "Learn java the hard way",
+    "isbn": "987654321"
+}
+
+### add second book to Campus
+
+POST http://localhost:8080/campuses/1/addBook
+Content-Type: application/json
+
+{
+    "title": "change stuff",
+    "description": "Learn java the hard way",
+    "isbn": "987654321",
+    "img":"http://www.google.com"
+}
+
+### get single campus
+GET http://localhost:8080/campuses/1
+
+### get single book
+GET http://localhost:8080/books/2
+
+### get all book
+GET http://localhost:8080/books
