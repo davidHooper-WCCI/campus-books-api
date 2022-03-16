@@ -2,6 +2,18 @@
 
 GET http://localhost:8080/campuses
 
+### add a campus
+
+POST http://localhost:8080/campuses/addCampus
+Content-Type: application/json
+
+{
+    "location": "Moab",
+    "techStack": "Rust",
+    "books": []
+}
+
+
 ### add Book to Campus
 
 POST http://localhost:8080/campuses/1/addBook

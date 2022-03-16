@@ -37,4 +37,10 @@ public class CampusController {
         return campus;
     }
 
+    @PostMapping("/campuses/addCampus")
+    public Iterable<Campus> addCampus(@RequestBody Campus campus){
+        campusRepo.save(campus);
+        return campusRepo.findAll();
+    }
+
 }

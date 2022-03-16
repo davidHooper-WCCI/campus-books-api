@@ -19,6 +19,8 @@ public class Populator implements CommandLineRunner {
     public void run(String... args) throws Exception {
         Campus campus1 = new Campus("Columbus","Java");
         campusRepo.save(campus1);
+        Campus campus2 = new Campus("Cleveland","C#");
+        campusRepo.save(campus2);
         Book book1 = new Book("Head First Java","Learn java the easy way","123456",campus1);
         bookRepo.save(book1);
     }
