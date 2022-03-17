@@ -23,5 +23,9 @@ public class Populator implements CommandLineRunner {
         campusRepo.save(campus2);
         Book book1 = new Book("Head First Java","Learn java the easy way","123456",campus1);
         bookRepo.save(book1);
+        Book book2 = new Book("Some book","Learn C# the weird way","555444",campus2);
+        bookRepo.save(book2);
+        Book book3 = new Book("Head First Java","Learn C# the normal way","987654321",campus2);
+        bookRepo.save(book3);
     }
 }
