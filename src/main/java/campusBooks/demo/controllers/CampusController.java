@@ -43,4 +43,20 @@ public class CampusController {
         return campusRepo.findAll();
     }
 
+    @DeleteMapping("/campuses/{id}")
+    public Iterable<Campus> deleteCampus(@PathVariable long id)
+    {
+        campusRepo.delete(campusRepo.findById(id).get());
+        return  campusRepo.findAll();
+    }
+
+    @PatchMapping("/campuses/{id}")
+    public Iterable<Campus> changeTechStack(@PathVariable long id, @RequestBody String techStack)
+    {
+        Campus campus = campusRepo.findById(id).get();
+        campus.updateTechStack(techStack);
+        campusRepo.save(campus);
+        return  campusRepo.findAll();
+    }
+
 }

@@ -2,10 +2,7 @@ package campusBooks.demo.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.Collection;
 
 @Entity
@@ -16,7 +13,7 @@ public class Campus {
     private long id;
     private String location;
     private String techStack;
-    @OneToMany(mappedBy = "campus")
+    @OneToMany(mappedBy = "campus", cascade = CascadeType.ALL, orphanRemoval = true)
     private Collection<Book> books;
 
     public Campus(String location, String techStack) {
@@ -25,6 +22,10 @@ public class Campus {
     }
 
     public Campus() {
+    }
+
+    public void updateTechStack(String newTechStack) {
+        techStack = newTechStack;
     }
 
     public String getLocation() {

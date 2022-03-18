@@ -45,3 +45,11 @@ GET http://localhost:8080/books/3
 
 ### get all book
 GET http://localhost:8080/books
+
+###
+DELETE  http://localhost:8080/campuses/1
+
+###
+PATCH http://localhost:8080/campuses/1
+
+Cobol
