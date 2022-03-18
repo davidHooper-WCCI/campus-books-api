@@ -82,7 +82,7 @@ function makeCampusView(campus) {
             "description": bookDescriptionInput.value,
             "isbn": bookISBNInput.value
         }
-        fetch(`http://localhost:8080/campuses/${campusId}/addBook`, {
+        fetch(`http://localhost:8080/campuses/${campus.id}/addBook`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -91,7 +91,7 @@ function makeCampusView(campus) {
             })
             .then(res => res.json())
             .then(campus => {
-                makeCampusView(campus.id);
+                makeCampusView(campus);
             })
     })
     // })
